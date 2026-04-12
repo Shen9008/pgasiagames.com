@@ -5,7 +5,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(15, 10, 26, 0.95);
+    background: rgba(0, 0, 0, 0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
 }
@@ -603,7 +603,7 @@ main > .promo-banner {
 
 .responsible-gaming {
     padding: var(--space-lg);
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(212, 175, 55, 0.08);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-xl);
 }
@@ -685,5 +685,5 @@ main > .promo-banner {
 }
 
 .hero--pgasia .hero__bg::after {
-    background: linear-gradient(135deg, rgba(12, 18, 32, 0.92) 0%, rgba(7, 11, 18, 0.65) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(20, 15, 8, 0.55) 100%);
 }

@@ -1056,7 +1056,7 @@ body[data-page="blog"] .content-page {
 }
 
 .promo-card__visual--cashback::before {
-    background: radial-gradient(ellipse 70% 50% at 70% 30%, rgba(34, 197, 94, 0.25) 0%, transparent 60%),
+    background: radial-gradient(ellipse 70% 50% at 70% 30%, rgba(212, 175, 55, 0.22) 0%, transparent 60%),
                 linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.08) 50%, transparent 60%);
 }
 
@@ -1839,17 +1839,17 @@ body[data-page="blog"] .content-page {
 }
 
 .slots-category-card--rtp {
-    background: linear-gradient(145deg, rgba(34, 197, 94, 0.12) 0%, var(--card-bg) 100%);
-    border-color: rgba(34, 197, 94, 0.35);
+    background: linear-gradient(145deg, rgba(212, 175, 55, 0.12) 0%, var(--card-bg) 100%);
+    border-color: rgba(212, 175, 55, 0.35);
 }
 
 .slots-category-card--rtp .slots-category-card__icon {
-    color: var(--success);
+    color: var(--primary-light);
 }
 
 .slots-category-card--rtp .slots-category-card__tag {
-    background: rgba(34, 197, 94, 0.3);
-    color: #4ade80;
+    background: rgba(212, 175, 55, 0.25);
+    color: var(--primary-light);
 }
 
 .slots-category-card--megaways {

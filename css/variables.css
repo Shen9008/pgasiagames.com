@@ -1,23 +1,23 @@
-/* PG Asia Games - Design Tokens */
+/* PG Asia Games - Design Tokens (black & gold) */
 
 :root {
-    /* Brand - Deep emerald with champagne gold */
-    --primary: #10b981;
-    --primary-dark: #059669;
-    --primary-light: #34d399;
-    --secondary: #d4af37;
-    --secondary-dark: #b8960c;
+    /* Brand - Black & gold */
+    --primary: #d4af37;
+    --primary-dark: #b8960c;
+    --primary-light: #f4d03f;
+    --secondary: #c9a227;
+    --secondary-dark: #9a7b0a;
 
     /* Backgrounds */
-    --dark-bg: #0c1220;
-    --darker-bg: #070b12;
-    --card-bg: #121a2e;
-    --card-bg-hover: #1a2540;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #000000;
+    --card-bg: #141414;
+    --card-bg-hover: #1c1c1c;
 
     /* Text */
-    --text-primary: #f8fafc;
-    --text-secondary: #e2e8f0;
-    --text-muted: #94a3b8;
+    --text-primary: #ffffff;
+    --text-secondary: #e8e8e8;
+    --text-muted: #a0a0a0;
 
     /* Accents */
     --accent-gold: #d4af37;
@@ -27,19 +27,19 @@
     --error: #ef4444;
 
     /* Borders */
-    --border-color: rgba(16, 185, 129, 0.28);
+    --border-color: rgba(212, 175, 55, 0.25);
     --border-color-light: rgba(255, 255, 255, 0.08);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-primary: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
     --gradient-gold: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(7, 11, 18, 0.98) 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.98) 100%);
 
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
-    --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.22);
+    --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.25);
 
     /* Spacing */
     --space-xs: 0.25rem;
