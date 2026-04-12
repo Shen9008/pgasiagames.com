@@ -347,7 +347,8 @@
 body[data-page="slots"] .content-page,
 body[data-page="live-casino"] .content-page,
 body[data-page="sports-betting"] .content-page,
-body[data-page="blog"] .content-page {
+body[data-page="blog"] .content-page,
+body[data-page="bonus"] .content-page {
     max-width: 100%;
 }
 
@@ -1144,6 +1145,9 @@ body[data-page="blog"] .content-page {
 .promo-card:nth-child(3) { animation-delay: 0.15s; }
 .promo-card:nth-child(4) { animation-delay: 0.2s; }
 .promo-card:nth-child(5) { animation-delay: 0.25s; }
+.promo-card:nth-child(6) { animation-delay: 0.3s; }
+.promo-card:nth-child(7) { animation-delay: 0.35s; }
+.promo-card:nth-child(8) { animation-delay: 0.4s; }
 
 .promo-card:hover {
     border-color: var(--primary);
@@ -1218,6 +1222,33 @@ body[data-page="blog"] .content-page {
 .promo-card__visual--vip::before {
     background: radial-gradient(ellipse 80% 70% at 20% 80%, rgba(212, 175, 55, 0.25) 0%, transparent 55%),
                 linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+}
+
+.promo-card__visual--live {
+    background: linear-gradient(145deg, #101820 0%, #1a2830 50%, #101820 100%);
+}
+
+.promo-card__visual--live::before {
+    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(212, 175, 55, 0.28) 0%, transparent 60%),
+                linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+}
+
+.promo-card__visual--sports {
+    background: linear-gradient(145deg, #121a14 0%, #1e2818 50%, #121a14 100%);
+}
+
+.promo-card__visual--sports::before {
+    background: radial-gradient(circle at 75% 25%, rgba(34, 197, 94, 0.15) 0%, transparent 45%),
+                radial-gradient(ellipse 90% 50% at 30% 70%, rgba(212, 175, 55, 0.2) 0%, transparent 55%);
+}
+
+.promo-card__visual--refer {
+    background: linear-gradient(145deg, #18141c 0%, #241e2e 50%, #18141c 100%);
+}
+
+.promo-card__visual--refer::before {
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.22) 0%, transparent 55%),
+                repeating-conic-gradient(from 0deg, transparent 0deg 8deg, rgba(212, 175, 55, 0.04) 8deg 16deg);
 }
 
 .promo-card__badge {
@@ -1305,11 +1336,25 @@ body[data-page="blog"] .content-page {
     .promo-cards-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .promo-cards-grid.promo-cards-grid--bonus {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
 }
 
 @media (min-width: 1024px) {
     .promo-cards-grid {
         grid-template-columns: repeat(5, 1fr);
+    }
+
+    .promo-cards-grid.promo-cards-grid--bonus {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-cards-grid.promo-cards-grid--bonus {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
