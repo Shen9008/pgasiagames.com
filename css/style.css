@@ -1,7 +1,6 @@
 /* PG Asia Games - Main stylesheet
-   Modular structure: variables → base → components → layout */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+   Modular structure: variables → base → components → layout
+   Inter font is loaded from HTML (preconnect + link) for better LCP. */
 
 @import 'variables.css';
 @import 'base.css';

@@ -14,7 +14,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-md) var(--space-lg);
+    padding-top: calc(var(--space-md) + env(safe-area-inset-top, 0px));
+    padding-bottom: var(--space-md);
+    padding-left: calc(var(--space-lg) + env(safe-area-inset-left, 0px));
+    padding-right: calc(var(--space-lg) + env(safe-area-inset-right, 0px));
 }
 
 .logo {
@@ -73,6 +76,17 @@
     color: white;
     cursor: pointer;
     padding: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    touch-action: manipulation;
+}
+
+body.menu-open {
+    overflow: hidden;
+    touch-action: none;
 }
 
 /* Mobile menu */
@@ -81,14 +95,18 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: min(280px, 100vw - env(safe-area-inset-left, 0px));
     height: 100vh;
+    height: 100dvh;
     background: var(--darker-bg);
-    padding: var(--space-2xl);
+    padding: calc(var(--space-2xl) + env(safe-area-inset-top, 0px)) var(--space-2xl) var(--space-2xl) var(--space-2xl);
+    padding-right: calc(var(--space-2xl) + env(safe-area-inset-right, 0px));
     z-index: 99;
     border-left: 1px solid var(--border-color);
     transform: translateX(100%);
     transition: transform var(--transition-normal);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.active {
@@ -100,10 +118,13 @@
 }
 
 .mobile-menu__link {
-    display: block;
-    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    padding: 0.875rem var(--space-md);
+    min-height: 44px;
     color: var(--text-secondary);
     font-weight: 500;
+    touch-action: manipulation;
 }
 
 .mobile-menu__link:hover,
@@ -114,7 +135,7 @@
 @media (max-width: 900px) {
     .nav { display: none; }
     .header__actions { display: none; }
-    .mobile-menu-toggle { display: block; }
+    .mobile-menu-toggle { display: inline-flex; }
     .mobile-menu { display: block; }
 }
 
@@ -492,7 +513,7 @@ main > .promo-banner {
 /* Footer */
 .footer {
     background: var(--darker-bg);
-    padding: var(--space-2xl) 0 var(--space-lg);
+    padding: var(--space-2xl) 0 calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
     border-top: 1px solid var(--border-color);
 }
 

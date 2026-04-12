@@ -82,10 +82,26 @@
             var toggle = document.querySelector('.mobile-menu-toggle');
             var menu = document.querySelector('.mobile-menu');
             if (toggle && menu) {
-                toggle.addEventListener('click', function () {
-                    menu.classList.toggle('active');
+                function setMenuOpen(open) {
+                    menu.classList.toggle('active', open);
+                    document.body.classList.toggle('menu-open', open);
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
                     var icon = toggle.querySelector('use');
-                    if (icon) icon.setAttribute('href', menu.classList.contains('active') ? '#icon-close' : '#icon-menu');
+                    if (icon) icon.setAttribute('href', open ? '#icon-close' : '#icon-menu');
+                }
+                toggle.addEventListener('click', function () {
+                    setMenuOpen(!menu.classList.contains('active'));
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && menu.classList.contains('active')) {
+                        setMenuOpen(false);
+                    }
+                });
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        setMenuOpen(false);
+                    });
                 });
             }
         }).catch(function () {
