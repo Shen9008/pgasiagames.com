@@ -1,0 +1,23 @@
+# Cloudflare Pages — canonical URL redirects
+/index.html / 301
+/index / 301
+
+/slots /slots/ 301
+/live-casino /live-casino/ 301
+/sports-betting /sports-betting/ 301
+/bonus /bonus/ 301
+/about-us /about-us/ 301
+/help-center /help-center/ 301
+/responsible-gambling /responsible-gambling/ 301
+/terms-conditions /terms-conditions/ 301
+/sitemap /sitemap/ 301
+
+/slots/index.html /slots/ 301
+/live-casino/index.html /live-casino/ 301
+/sports-betting/index.html /sports-betting/ 301
+/bonus/index.html /bonus/ 301
+/about-us/index.html /about-us/ 301
+/help-center/index.html /help-center/ 301
+/responsible-gambling/index.html /responsible-gambling/ 301
+/terms-conditions/index.html /terms-conditions/ 301
+/sitemap/index.html /sitemap/ 301

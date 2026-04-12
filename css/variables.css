@@ -1,0 +1,65 @@
+/* PG Asia Games - Design Tokens */
+
+:root {
+    /* Brand - Deep emerald with champagne gold */
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --primary-light: #34d399;
+    --secondary: #d4af37;
+    --secondary-dark: #b8960c;
+
+    /* Backgrounds */
+    --dark-bg: #0c1220;
+    --darker-bg: #070b12;
+    --card-bg: #121a2e;
+    --card-bg-hover: #1a2540;
+
+    /* Text */
+    --text-primary: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
+
+    /* Accents */
+    --accent-gold: #d4af37;
+    --accent-gold-dark: #b8960c;
+    --success: #22c55e;
+    --warning: #f97316;
+    --error: #ef4444;
+
+    /* Borders */
+    --border-color: rgba(16, 185, 129, 0.28);
+    --border-color-light: rgba(255, 255, 255, 0.08);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-gold: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(7, 11, 18, 0.98) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.22);
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+}
