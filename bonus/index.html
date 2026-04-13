@@ -38,7 +38,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="../js/load-partials.js"></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pgasiagames.com/"},{"@type":"ListItem","position":2,"name":"Bonus","item":"https://pgasiagames.com/bonus/"}]}
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "Organization", "@id": "https://pgasiagames.com/#organization", "name": "PG Asia Games", "alternateName": ["PGAsia", "pgasia"], "url": "https://pgasiagames.com/", "logo": {"@type": "ImageObject", "url": "https://pgasiagames.com/favicon.svg"}},
+            {"@type": "WebSite", "@id": "https://pgasiagames.com/#website", "name": "PG Asia Games", "url": "https://pgasiagames.com/", "publisher": {"@id": "https://pgasiagames.com/#organization"}},
+            {"@type": "WebPage", "@id": "https://pgasiagames.com/bonus/#webpage", "url": "https://pgasiagames.com/bonus/", "name": "PGAsia Bonus | 100% Welcome & Cashback | pgasiagames.com", "description": "PG Asia Games (PGAsia) bonuses on pgasiagames.com—100% welcome match, daily cashback, VIP. Slots, live casino & sports eligible where stated.", "inLanguage": "en", "isPartOf": {"@id": "https://pgasiagames.com/#website"}, "publisher": {"@id": "https://pgasiagames.com/#organization"}, "breadcrumb": {"@id": "https://pgasiagames.com/bonus/#breadcrumb"}},
+            {"@type": "BreadcrumbList", "@id": "https://pgasiagames.com/bonus/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pgasiagames.com/"}, {"@type": "ListItem", "position": 2, "name": "Bonus", "item": "https://pgasiagames.com/bonus/"}]}
+        ]
+    }
     </script>
 </head>
 <body data-page="bonus">

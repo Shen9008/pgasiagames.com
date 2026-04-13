@@ -38,7 +38,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="../js/load-partials.js"></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pgasiagames.com/"},{"@type":"ListItem","position":2,"name":"Responsible Gambling","item":"https://pgasiagames.com/responsible-gambling/"}]}
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "Organization", "@id": "https://pgasiagames.com/#organization", "name": "PG Asia Games", "alternateName": ["PGAsia", "pgasia"], "url": "https://pgasiagames.com/", "logo": {"@type": "ImageObject", "url": "https://pgasiagames.com/favicon.svg"}},
+            {"@type": "WebSite", "@id": "https://pgasiagames.com/#website", "name": "PG Asia Games", "url": "https://pgasiagames.com/", "publisher": {"@id": "https://pgasiagames.com/#organization"}},
+            {"@type": "WebPage", "@id": "https://pgasiagames.com/responsible-gambling/#webpage", "url": "https://pgasiagames.com/responsible-gambling/", "name": "Responsible Gambling | PGAsia | pgasiagames.com", "description": "PG Asia Games responsible gambling: deposit and loss limits, session tools, self-exclusion, warning signs, underage policy, and links to BeGambleAware, GamCare & more at pgasiagames.com.", "inLanguage": "en", "isPartOf": {"@id": "https://pgasiagames.com/#website"}, "publisher": {"@id": "https://pgasiagames.com/#organization"}, "breadcrumb": {"@id": "https://pgasiagames.com/responsible-gambling/#breadcrumb"}},
+            {"@type": "BreadcrumbList", "@id": "https://pgasiagames.com/responsible-gambling/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pgasiagames.com/"}, {"@type": "ListItem", "position": 2, "name": "Responsible Gambling", "item": "https://pgasiagames.com/responsible-gambling/"}]}
+        ]
+    }
     </script>
 </head>
 <body data-page="responsible">
