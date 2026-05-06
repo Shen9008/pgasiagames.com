@@ -2,14 +2,10 @@
 
 /* Single post only (`data-blog-slug` not set on /blog/ index) */
 body[data-page="blog"][data-blog-slug] #main-content .container {
-    padding-left: max(
-        calc(var(--container-padding-x) + var(--space-lg)),
-        env(safe-area-inset-left, 0px)
-    );
-    padding-right: max(
-        calc(var(--container-padding-x) + var(--space-lg)),
-        env(safe-area-inset-right, 0px)
-    );
+    padding-left: max(calc(var(--container-padding-x) + var(--space-lg)),
+            env(safe-area-inset-left, 0px));
+    padding-right: max(calc(var(--container-padding-x) + var(--space-lg)),
+            env(safe-area-inset-right, 0px));
 }
 
 .section--tight {
@@ -354,14 +350,15 @@ a.blog-pagination__link:hover {
     .blog-sidebar {
         position: sticky;
         /* Breathing room below the sticky header when the sidebar pins */
-        top: calc(env(safe-area-inset-top, 0px) + 5rem + var(--space-md));
+        top: calc(env(safe-area-inset-top, 0px) + 1rem + var(--space-md));
         align-self: start;
         max-height: calc(100vh - env(safe-area-inset-top, 0px) - 7rem - var(--space-md));
         max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 7rem - var(--space-md));
         overflow-y: auto;
         overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
-        padding-right: 2px; /* scrollbar / focus ring clearance */
+        padding-right: 2px;
+        /* scrollbar / focus ring clearance */
         scrollbar-width: thin;
         scrollbar-color: rgba(212, 175, 55, 0.35) transparent;
     }
@@ -452,7 +449,7 @@ a.blog-pagination__link:hover {
     color: var(--text-muted);
 }
 
-.blog-sidebar-list > .blog-sidebar-placeholder {
+.blog-sidebar-list>.blog-sidebar-placeholder {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin: 0;
@@ -548,7 +545,7 @@ a.blog-pagination__link:hover {
     max-width: 48rem;
 }
 
-.blog-prose > *:first-child {
+.blog-prose>*:first-child {
     margin-top: 0;
 }
 
@@ -609,14 +606,10 @@ a.blog-pagination__link:hover {
 
 @media (max-width: 639px) {
     body[data-page="blog"][data-blog-slug] #main-content .container {
-        padding-left: max(
-            calc(var(--container-padding-x) + var(--space-sm)),
-            env(safe-area-inset-left, 0px)
-        );
-        padding-right: max(
-            calc(var(--container-padding-x) + var(--space-sm)),
-            env(safe-area-inset-right, 0px)
-        );
+        padding-left: max(calc(var(--container-padding-x) + var(--space-sm)),
+                env(safe-area-inset-left, 0px));
+        padding-right: max(calc(var(--container-padding-x) + var(--space-sm)),
+                env(safe-area-inset-right, 0px));
     }
 
     .section--tight {
