@@ -1,0 +1,5 @@
+# Cloudflare Pages — direct upload (npm run deploy / CI)
+# Dashboard project name must match `name` (or set Actions variable CLOUDFLARE_PAGES_PROJECT_NAME).
+name = "pgasiagames"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "."

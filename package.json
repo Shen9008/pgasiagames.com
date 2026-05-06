@@ -9,13 +9,15 @@
     "backfill": "node scripts/backfill-internal-links.js",
     "backfill:force": "node scripts/backfill-internal-links.js --force",
     "audit:links": "node scripts/audit-internal-links.js",
-    "build:webp": "node scripts/build-assets-webp.mjs && node scripts/patch-html-img-webp.mjs"
+    "build:webp": "node scripts/build-assets-webp.mjs && node scripts/patch-html-img-webp.mjs",
+    "deploy": "node scripts/deploy-pages.mjs"
   },
   "engines": {
     "node": ">=18"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "wrangler": "^4.88.0"
   }
 }

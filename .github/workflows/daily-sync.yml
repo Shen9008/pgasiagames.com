@@ -26,6 +26,8 @@ jobs:
       BLOG_BASE_PATH: "${{ vars.BLOG_BASE_PATH}}"
       STRAPI_COLLECTION: "${{ vars.STRAPI_COLLECTION}}"
       SITE_DOMAIN: "${{ vars.SITE_DOMAIN}}"
+      # Optional: Cloudflare Pages project name (defaults to wrangler.toml `name` if empty).
+      CLOUDFLARE_PAGES_PROJECT_NAME: "${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME }}"
 
     steps:
       - name: Checkout repo
