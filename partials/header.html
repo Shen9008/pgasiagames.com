@@ -1,33 +1,47 @@
-<header class="header">
-    <div class="header__inner container">
-        <a href="/" class="logo logo--pgasia" aria-label="PG Asia Games home">
-            <span class="logo__mark" aria-hidden="true">PG</span>
-            <span><span class="logo__text-pg">Asia</span><span class="logo__text-rest"> Games</span></span>
-        </a>
-        <nav class="nav" aria-label="Main navigation">
-            <ul class="nav__list">
-                <li><a href="/" class="nav__link" data-nav="index">Home</a></li>
-                <li><a href="/slots/" class="nav__link" data-nav="slots">Slots</a></li>
-                <li><a href="/live-casino/" class="nav__link" data-nav="live-casino">Live Casino</a></li>
-                <li><a href="/sports-betting/" class="nav__link" data-nav="sports-betting">Sports</a></li>
-                <li><a href="/bonus/" class="nav__link" data-nav="bonus">Bonus</a></li>
-                <li><a href="/about-us/" class="nav__link" data-nav="about-us">About</a></li>
-                <li><a href="/help-center/" class="nav__link" data-nav="help-center">Help</a></li>
-            </ul>
-        </nav>
-        <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-mobile-menu">
-            <svg class="icon icon--menu" width="24" height="24" aria-hidden="true"><use href="#icon-menu"/></svg>
-        </button>
+<div class="site-header-root">
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo logo--pgasia" aria-label="PG Asia Games home">
+                <img class="logo__img" src="/assets/logo-main.webp" width="467" height="134" alt="PG Asia Games"
+                    decoding="async" fetchpriority="high">
+            </a>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li><a href="/" class="nav__link" data-nav="index">Home</a></li>
+                    <li><a href="/slots/" class="nav__link" data-nav="slots">Slots</a></li>
+                    <li><a href="/live-casino/" class="nav__link" data-nav="live-casino">Live Casino</a></li>
+                    <li><a href="/sports-betting/" class="nav__link" data-nav="sports-betting">Sports</a></li>
+                    <li><a href="/bonus/" class="nav__link" data-nav="bonus">Bonus</a></li>
+                    <li><a href="/about-us/" class="nav__link" data-nav="about-us">About</a></li>
+                    <li><a href="/blog/" class="nav__link" data-nav="blog">Blog</a></li>
+                    <li><a href="/help-center/" class="nav__link" data-nav="help-center">Help</a></li>
+                </ul>
+            </nav>
+            <button class="nav-drawer-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="site-nav-drawer">
+                <svg class="icon icon--menu" width="22" height="22" aria-hidden="true">
+                    <use href="#icon-menu"></use>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <button type="button" class="nav-drawer-backdrop" id="site-nav-drawer-backdrop" hidden aria-hidden="true"
+        tabindex="-1" aria-label="Close menu"></button>
+    <div id="site-nav-drawer" class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu"
+        aria-hidden="true">
+        <div class="nav-drawer__surface">
+            <div class="nav-drawer__top">
+                <div class="nav-drawer__brand">
+                    <img class="nav-drawer__logo" src="/assets/logo-main.webp" width="467" height="134"
+                        alt="PG Asia Games" decoding="async">
+                    <p class="nav-drawer__tagline">Casino &amp; sports</p>
+                </div>
+                <button type="button" class="nav-drawer__close" aria-label="Close menu">
+                    <svg class="icon icon--close" width="22" height="22" aria-hidden="true">
+                        <use href="#icon-close"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
-</header>
-<nav class="mobile-menu" id="site-mobile-menu" aria-label="Mobile menu">
-    <ul class="mobile-menu__list">
-        <li><a href="/" class="mobile-menu__link" data-nav="index">Home</a></li>
-        <li><a href="/slots/" class="mobile-menu__link" data-nav="slots">Slots</a></li>
-        <li><a href="/live-casino/" class="mobile-menu__link" data-nav="live-casino">Live Casino</a></li>
-        <li><a href="/sports-betting/" class="mobile-menu__link" data-nav="sports-betting">Sports</a></li>
-        <li><a href="/bonus/" class="mobile-menu__link" data-nav="bonus">Bonus</a></li>
-        <li><a href="/about-us/" class="mobile-menu__link" data-nav="about-us">About</a></li>
-        <li><a href="/help-center/" class="mobile-menu__link" data-nav="help-center">Help</a></li>
-    </ul>
-</nav>
+</div>

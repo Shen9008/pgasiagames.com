@@ -40,18 +40,19 @@ img {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding-left: max(var(--space-lg), env(safe-area-inset-left, 0px));
-    padding-right: max(var(--space-lg), env(safe-area-inset-right, 0px));
+    padding-left: max(var(--container-padding-x), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--container-padding-x), env(safe-area-inset-right, 0px));
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     color: var(--text-primary);
+    letter-spacing: var(--tracking-tight);
 }
 
 h1 { font-size: 2.25rem; }

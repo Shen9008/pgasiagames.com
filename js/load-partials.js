@@ -19,9 +19,129 @@
     function setActiveNav() {
         var page = document.body.getAttribute('data-page') || '';
         if (!page) return;
-        document.querySelectorAll('.nav__link[data-nav="' + page + '"], .mobile-menu__link[data-nav="' + page + '"]').forEach(function (el) {
-            el.classList.add('nav__link--active', 'mobile-menu__link--active');
+        document.querySelectorAll('.nav__link[data-nav="' + page + '"]').forEach(function (el) {
+            el.classList.add('nav__link--active');
         });
+        document.querySelectorAll('.nav-drawer__item[data-nav="' + page + '"]').forEach(function (el) {
+            el.classList.add('nav-drawer__item--current');
+        });
+    }
+
+    /**
+     * Build drawer body + link list from desktop nav. Runs after partial inject so a truncated
+     * `partials/header.html` response cannot leave the drawer without links.
+     */
+    function hydrateNavDrawer() {
+        var drawer = document.getElementById('site-nav-drawer');
+        var surface = drawer && drawer.querySelector('.nav-drawer__surface');
+        if (!surface) {
+            return;
+        }
+
+        var body = surface.querySelector('.nav-drawer__body');
+        if (!body) {
+            body = document.createElement('div');
+            body.className = 'nav-drawer__body';
+            surface.appendChild(body);
+        }
+
+        var navEl = body.querySelector('.nav-drawer__nav');
+        if (!navEl) {
+            navEl = document.createElement('nav');
+            navEl.className = 'nav-drawer__nav';
+            navEl.setAttribute('aria-label', 'Site sections');
+            body.appendChild(navEl);
+        }
+
+        var list = navEl.querySelector('.nav-drawer__list');
+        if (!list) {
+            list = document.createElement('ul');
+            list.className = 'nav-drawer__list';
+            navEl.appendChild(list);
+        }
+
+        var sources = document.querySelectorAll('.nav .nav__link[data-nav]');
+        if (!sources.length) {
+            return;
+        }
+
+        list.innerHTML = '';
+        for (var i = 0; i < sources.length; i++) {
+            var src = sources[i];
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = src.getAttribute('href') || '#';
+            a.className = 'nav-drawer__item';
+            a.setAttribute('data-nav', src.getAttribute('data-nav'));
+            a.textContent = (src.textContent || '').replace(/\s+/g, ' ').trim();
+            li.appendChild(a);
+            list.appendChild(li);
+        }
+    }
+
+    function bindNavDrawer() {
+        var toggle = document.querySelector('.nav-drawer-toggle');
+        var drawer = document.getElementById('site-nav-drawer');
+        var backdrop = document.getElementById('site-nav-drawer-backdrop');
+        if (!toggle || !drawer) {
+            return;
+        }
+
+        var btnClose = drawer.querySelector('.nav-drawer__close');
+        var list = drawer.querySelector('.nav-drawer__list');
+        var openedFrom = null;
+
+        function setDrawerOpen(open) {
+            drawer.classList.toggle('nav-drawer--open', open);
+            document.body.classList.toggle('nav-drawer-open', open);
+            drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            var icon = toggle.querySelector('use');
+            if (icon) {
+                icon.setAttribute('href', open ? '#icon-close' : '#icon-menu');
+            }
+            if (backdrop) {
+                backdrop.hidden = !open;
+                backdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
+            }
+            if (open) {
+                openedFrom = document.activeElement;
+                if (btnClose && typeof btnClose.focus === 'function') {
+                    btnClose.focus();
+                }
+            } else if (openedFrom && typeof openedFrom.focus === 'function') {
+                openedFrom.focus();
+                openedFrom = null;
+            }
+        }
+
+        if (btnClose) {
+            btnClose.addEventListener('click', function () {
+                setDrawerOpen(false);
+            });
+        }
+        toggle.addEventListener('click', function () {
+            setDrawerOpen(!drawer.classList.contains('nav-drawer--open'));
+        });
+        if (backdrop) {
+            backdrop.addEventListener('click', function () {
+                setDrawerOpen(false);
+            });
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && drawer.classList.contains('nav-drawer--open')) {
+                setDrawerOpen(false);
+            }
+        });
+        if (list) {
+            list.addEventListener('click', function (e) {
+                var link = e.target.closest && e.target.closest('.nav-drawer__item');
+                if (link) {
+                    setDrawerOpen(false);
+                }
+            });
+        }
     }
 
     function injectSvgSprite() {
@@ -78,33 +198,11 @@
         }
 
         Promise.all(promises).then(function () {
+            hydrateNavDrawer();
             setActiveNav();
-            var toggle = document.querySelector('.mobile-menu-toggle');
-            var menu = document.querySelector('.mobile-menu');
-            if (toggle && menu) {
-                function setMenuOpen(open) {
-                    menu.classList.toggle('active', open);
-                    document.body.classList.toggle('menu-open', open);
-                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-                    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-                    var icon = toggle.querySelector('use');
-                    if (icon) icon.setAttribute('href', open ? '#icon-close' : '#icon-menu');
-                }
-                toggle.addEventListener('click', function () {
-                    setMenuOpen(!menu.classList.contains('active'));
-                });
-                document.addEventListener('keydown', function (e) {
-                    if (e.key === 'Escape' && menu.classList.contains('active')) {
-                        setMenuOpen(false);
-                    }
-                });
-                menu.querySelectorAll('a').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        setMenuOpen(false);
-                    });
-                });
-            }
+            bindNavDrawer();
         }).catch(function () {
+            hydrateNavDrawer();
             setActiveNav();
         });
     }

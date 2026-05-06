@@ -10,4 +10,49 @@
   <url><loc>https://pgasiagames.com/terms-conditions/</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://pgasiagames.com/responsible-gambling/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://pgasiagames.com/sitemap/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://pgasiagames.com/blog/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://pgasiagames.com/blog/pg-asia-games-complete-guide-for-new-online-players/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pgasiagames.com/blog/what-is-pg-asia-games-and-how-it-works-online/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pgasiagames.com/blog/why-pg-asia-games-are-popular-among-asian-players/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pgasiagames.com/blog/how-to-start-playing-on-pg-asia-games-platform/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pgasiagames.com/blog/best-pg-soft-slot-games-available-on-pg-asia-games/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pgasiagames.com/blog/top-pg-asia-games-slot-titles-you-should-try-first/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pgasiagames.com/blog/beginner-guide-to-playing-pg-slots-online/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- /Blog Posts -->
 </urlset>

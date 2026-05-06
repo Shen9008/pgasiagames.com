@@ -1,8 +1,12 @@
 /* PG Asia Games - Main stylesheet
    Modular structure: variables → base → components → layout
-   Inter font is loaded from HTML (preconnect + link) for better LCP. */
+   Inter remains loaded from HTML (preconnect + link) for LCP on body/UI.
+   Outfit is used for headings via this import. */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap');
 
 @import 'variables.css';
 @import 'base.css';
 @import 'components.css';
 @import 'layout.css';
+@import 'blog.css';
