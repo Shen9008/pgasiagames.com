@@ -391,6 +391,65 @@
     color: var(--text-secondary);
 }
 
+.contact-card {
+    margin: var(--space-lg) 0 var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--card-bg);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: var(--radius-md);
+}
+
+.content-page .contact-card .contact-card__email-line {
+    margin: 0 0 var(--space-sm);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.contact-card__label {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.contact-card__email {
+    font-weight: 600;
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.contact-card__email:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.content-page .contact-card .contact-card__note {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.content-page .contact-card .contact-card__chat-line {
+    margin: 0 0 var(--space-md);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.contact-card__chat-text {
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.content-page .contact-card .contact-card__instruction {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
 .content-page ol, .content-page ul {
     margin-bottom: var(--space-lg);
     color: var(--text-secondary);

@@ -148,10 +148,40 @@
         var svg = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;" aria-hidden="true"><defs>' +
             '<symbol id="icon-menu" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></symbol>' +
             '<symbol id="icon-close" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>' +
+            '<symbol id="icon-chevron-up" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></symbol>' +
             '</defs></svg>';
         var wrap = document.createElement('div');
         wrap.innerHTML = svg;
         document.body.insertBefore(wrap.firstChild, document.body.firstChild);
+    }
+
+    function bindScrollToTop() {
+        var btn = document.getElementById('scroll-to-top-btn');
+        if (!btn) {
+            return;
+        }
+
+        var threshold = 420;
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        function applyVisibility() {
+            var y = window.scrollY || document.documentElement.scrollTop || 0;
+            var show = y >= threshold;
+            btn.classList.toggle('scroll-to-top--visible', show);
+            btn.setAttribute('aria-hidden', show ? 'false' : 'true');
+            btn.setAttribute('tabindex', show ? '0' : '-1');
+        }
+
+        btn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: reducedMotion.matches ? 'auto' : 'smooth'
+            });
+            btn.blur();
+        });
+
+        window.addEventListener('scroll', applyVisibility, { passive: true });
+        applyVisibility();
     }
 
     function run() {
@@ -201,9 +231,12 @@
             hydrateNavDrawer();
             setActiveNav();
             bindNavDrawer();
+            bindScrollToTop();
         }).catch(function () {
             hydrateNavDrawer();
             setActiveNav();
+            bindNavDrawer();
+            bindScrollToTop();
         });
     }
 
