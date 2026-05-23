@@ -10,6 +10,7 @@
     "backfill:force": "node scripts/backfill-internal-links.js --force",
     "audit:links": "node scripts/audit-internal-links.js",
     "build:webp": "node scripts/build-assets-webp.mjs && node scripts/patch-html-img-webp.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs",
     "deploy": "node scripts/deploy-pages.mjs"
   },
   "engines": {
