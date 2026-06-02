@@ -13,7 +13,7 @@ const BLOGS_JSON_PATH = path.join(ROOT, 'assets/data/blogs.json');
 const BLOGS_JSON_FIELDS = [
   'slug', 'title', 'meta_title', 'meta_description', 'focus_keyword',
   'category', 'search_intent', 'published_date', 'reading_time',
-  'excerpt', 'placeholder_gradient', 'related_posts', 'keywords',
+  'excerpt', 'image', 'placeholder_gradient', 'related_posts', 'keywords',
   'synced_at',
 ];
 

@@ -32,7 +32,7 @@
   <meta property="og:description" content="{{META_DESCRIPTION}}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://pgasiagames.com/blog/{{SLUG}}/">
-  <meta property="og:image" content="https://pgasiagames.com/assets/img/banners/home.webp">
+  <meta property="og:image" content="{{OG_IMAGE}}">
   <meta property="og:site_name" content="PG Asia Games">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="{{PUBLISHED_DATE_ISO}}">
@@ -40,7 +40,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{META_TITLE}}">
   <meta name="twitter:description" content="{{META_DESCRIPTION}}">
-  <meta name="twitter:image" content="https://pgasiagames.com/assets/img/banners/home.webp">
+  <meta name="twitter:image" content="{{OG_IMAGE}}">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="../../css/style.css">
@@ -146,7 +146,9 @@
     </section>
 
     <section class="container section section--tight blog-featured-section">
-      <div class="blog-featured" style="background: {{PLACEHOLDER_GRADIENT}};">{{FOCUS_KEYWORD}}</div>
+      <div class="blog-featured">
+        <img src="{{FEATURED_IMAGE}}" alt="{{FEATURED_IMAGE_ALT}}" width="1200" height="675" loading="eager" decoding="async">
+      </div>
     </section>
 
     <article class="container section">

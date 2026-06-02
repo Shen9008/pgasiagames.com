@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { normalizePost, validatePost } = require('./normalize-post.js');
+const { resolvePostImage, resolvePostImageAbsolute } = require('./blog-image.js');
 const { injectInternalLinks } = require('./inject-internal-links.js');
 
 const ROOT = path.resolve(__dirname, '../..');
@@ -146,6 +147,8 @@ function renderArticle(normalized, opts = {}) {
   const faqScript = buildFaqSchemaScript(opts.faqItems || normalized.faq || []);
 
   const keywords = normalized.focus_keyword || normalized.title;
+  const featuredImage = resolvePostImage(normalized.image);
+  const ogImage = resolvePostImageAbsolute(normalized.image);
 
   const replacements = {
     '{{META_TITLE}}': normalized.meta_title || normalized.title,
@@ -162,6 +165,9 @@ function renderArticle(normalized, opts = {}) {
     '{{PLACEHOLDER_GRADIENT}}':
       normalized.placeholder_gradient ||
       'linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.05) 55%, #0a0a0a 100%)',
+    '{{FEATURED_IMAGE}}': featuredImage,
+    '{{FEATURED_IMAGE_ALT}}': normalized.title,
+    '{{OG_IMAGE}}': ogImage,
     '{{FOCUS_KEYWORD}}': normalized.focus_keyword || normalized.title,
     '{{TOC_HTML}}': tocHtml,
     '{{ARTICLE_BODY}}': articleBody,

@@ -1,5 +1,7 @@
 'use strict';
 
+const { extractPostImage } = require('./blog-image.js');
+
 const INTENT_GRADIENTS = {
   navigational:
     'linear-gradient(135deg, #0a0a0a 0%, rgba(212,175,55,0.25) 50%, #141414 100%)',
@@ -48,6 +50,7 @@ function normalizePost(strapiPost, opts = {}) {
     published_date: publishedDate,
     reading_time: formatReadingTime(strapiPost.reading_time),
     excerpt: strapiPost.shortDescription || strapiPost.excerpt || '',
+    image: extractPostImage(strapiPost),
     placeholder_gradient: strapiPost.placeholder_gradient || gradient,
     related_posts: opts.relatedPosts || [],
     keywords: normalizeKeywords(strapiPost.keywords),
