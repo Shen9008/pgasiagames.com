@@ -16,6 +16,35 @@
         return html;
     }
 
+    function markPremiumNavReady() {
+        document.body.classList.add('has-premium-nav');
+        document.body.classList.remove('use-legacy-nav');
+    }
+
+    function showLegacyNavFallback() {
+        document.body.classList.remove('has-premium-nav');
+        document.body.classList.add('use-legacy-nav');
+        var legacy = document.querySelector('.site-header-root--legacy');
+        if (legacy) {
+            legacy.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function finalizePartials() {
+        if (document.querySelector('.premium-nav-root')) {
+            markPremiumNavReady();
+        } else {
+            showLegacyNavFallback();
+        }
+        hydrateNavDrawer();
+        setActiveNav();
+        bindNavDrawer();
+        bindScrollToTop();
+        if (window.PGAsiaPremium && document.getElementById('premium-nav-links')) {
+            window.PGAsiaPremium.init();
+        }
+    }
+
     function setActiveNav() {
         var page = document.body.getAttribute('data-page') || '';
         if (!page) return;
@@ -24,6 +53,9 @@
         });
         document.querySelectorAll('.premium-nav__link[data-nav="' + page + '"]').forEach(function (el) {
             el.classList.add('premium-nav__link--active');
+        });
+        document.querySelectorAll('.premium-drawer__links a[data-nav="' + page + '"]').forEach(function (el) {
+            el.classList.add('premium-drawer__link--active');
         });
         document.querySelectorAll('.nav-drawer__item[data-nav="' + page + '"]').forEach(function (el) {
             el.classList.add('nav-drawer__item--current');
@@ -204,7 +236,10 @@
     function run() {
         injectSvgSprite();
         var promises = [
-            fetch(base + 'partials/header.html').then(function (r) { return r.text(); }).then(function (html) {
+            fetch(base + 'partials/header.html').then(function (r) {
+                if (!r.ok) throw new Error('header fetch failed');
+                return r.text();
+            }).then(function (html) {
                 var placeholder = document.getElementById('partial-header');
                 if (placeholder) {
                     placeholder.outerHTML = rewriteLinks(html);
@@ -247,22 +282,11 @@
         Promise.all(promises).then(function () {
             return ensurePremiumScript();
         }).then(function () {
-            hydrateNavDrawer();
-            setActiveNav();
-            bindNavDrawer();
-            bindScrollToTop();
-            if (window.PGAsiaPremium && document.getElementById('premium-nav-links')) {
-                window.PGAsiaPremium.init();
-            }
+            finalizePartials();
         }).catch(function () {
             ensurePremiumScript().then(function () {
-                hydrateNavDrawer();
-                setActiveNav();
-                bindNavDrawer();
-                bindScrollToTop();
-                if (window.PGAsiaPremium && document.getElementById('premium-nav-links')) {
-                    window.PGAsiaPremium.init();
-                }
+                showLegacyNavFallback();
+                finalizePartials();
             });
         });
     }

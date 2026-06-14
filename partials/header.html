@@ -1,3 +1,4 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="site-header-root premium-nav-root">
     <nav class="premium-nav" aria-label="Primary navigation">
         <a href="/" class="premium-nav__logo" aria-label="PGAsia home">
@@ -7,10 +8,11 @@
             <span class="premium-nav__cursor-dot" id="nav-cursor-dot" aria-hidden="true"></span>
             <a href="/slots/" class="premium-nav__link" data-premium-nav="casino" data-nav="slots">Casino</a>
             <a href="/live-casino/" class="premium-nav__link" data-premium-nav="experience" data-nav="live-casino">Experience</a>
+            <a href="/sports-betting/" class="premium-nav__link" data-premium-nav="sports" data-nav="sports-betting">Sports</a>
             <a href="/bonus/" class="premium-nav__link" data-premium-nav="reserve" data-nav="bonus">Reserve</a>
         </div>
         <a href="https://reffpa.com/L?tag=d_5501500m_1236c_&amp;site=5501500&amp;ad=1236" class="premium-nav__cta" target="_blank" rel="noopener noreferrer">Launch App</a>
-        <button type="button" class="premium-nav__toggle" id="premium-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="premium-drawer">
+        <button type="button" class="premium-nav__toggle" id="premium-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="premium-drawer-panel">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
         </button>
     </nav>
@@ -18,24 +20,24 @@
 
 <div class="premium-drawer" id="premium-drawer" aria-hidden="true">
     <div class="premium-drawer__backdrop" id="premium-drawer-backdrop"></div>
-    <div class="premium-drawer__panel" role="dialog" aria-label="Navigation menu">
-        <button type="button" id="premium-drawer-close" aria-label="Close menu" style="background:none;border:none;color:#fff;cursor:pointer;font-size:1.5rem;">×</button>
+    <div class="premium-drawer__panel" id="premium-drawer-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <button type="button" class="premium-drawer__close" id="premium-drawer-close" aria-label="Close menu">×</button>
         <ul class="premium-drawer__links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/slots/">Casino</a></li>
-            <li><a href="/live-casino/">Experience</a></li>
-            <li><a href="/sports-betting/">Sports</a></li>
-            <li><a href="/bonus/">Reserve</a></li>
-            <li><a href="/about-us/">About</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/help-center/">Help</a></li>
+            <li><a href="/" data-nav="index">Home</a></li>
+            <li><a href="/slots/" data-nav="slots">Casino</a></li>
+            <li><a href="/live-casino/" data-nav="live-casino">Experience</a></li>
+            <li><a href="/sports-betting/" data-nav="sports-betting">Sports</a></li>
+            <li><a href="/bonus/" data-nav="bonus">Reserve</a></li>
+            <li><a href="/about-us/" data-nav="about-us">About</a></li>
+            <li><a href="/blog/" data-nav="blog">Blog</a></li>
+            <li><a href="/help-center/" data-nav="help-center">Help</a></li>
         </ul>
-        <a href="https://reffpa.com/L?tag=d_5501500m_1236c_&amp;site=5501500&amp;ad=1236" class="premium-nav__cta" style="display:block;text-align:center;margin-top:2rem;" target="_blank" rel="noopener noreferrer">Launch App</a>
+        <a href="https://reffpa.com/L?tag=d_5501500m_1236c_&amp;site=5501500&amp;ad=1236" class="premium-nav__cta premium-drawer__cta" target="_blank" rel="noopener noreferrer">Launch App</a>
     </div>
 </div>
 
-<!-- Legacy header for inner pages fallback + drawer hydration source -->
-<div class="site-header-root site-header-root--legacy" hidden aria-hidden="true">
+<!-- Legacy header fallback when premium partial fails or JS is disabled -->
+<div class="site-header-root site-header-root--legacy" aria-hidden="true">
     <header class="header">
         <div class="header__inner container">
             <a href="/" class="logo logo--pgasia" aria-label="PG Asia Games home">
@@ -73,3 +75,14 @@
         </div>
     </div>
 </div>
+
+<noscript>
+    <nav class="noscript-nav" aria-label="Site navigation">
+        <a href="/">Home</a>
+        <a href="/slots/">Slots</a>
+        <a href="/live-casino/">Live Casino</a>
+        <a href="/sports-betting/">Sports</a>
+        <a href="/bonus/">Bonus</a>
+        <a href="/help-center/">Help</a>
+    </nav>
+</noscript>

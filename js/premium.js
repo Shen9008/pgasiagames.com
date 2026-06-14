@@ -45,23 +45,34 @@
         });
     }
 
+    function setAccordionItemState(item, open) {
+        var trigger = item.querySelector('.premium-accordion__trigger');
+        var panel = item.querySelector('.premium-accordion__panel');
+        item.classList.toggle('premium-accordion__item--open', open);
+        if (trigger) trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (panel) panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
+
     function initAccordion() {
         var items = document.querySelectorAll('.premium-accordion__item');
-        items.forEach(function (item) {
+        items.forEach(function (item, index) {
             var trigger = item.querySelector('.premium-accordion__trigger');
-            if (!trigger) return;
+            var panel = item.querySelector('.premium-accordion__panel');
+            if (!trigger || !panel) return;
+
+            var panelId = panel.id || ('faq-panel-' + index);
+            var triggerId = trigger.id || ('faq-trigger-' + index);
+            panel.id = panelId;
+            trigger.id = triggerId;
+            trigger.setAttribute('aria-controls', panelId);
+            setAccordionItemState(item, false);
 
             trigger.addEventListener('click', function () {
                 var isOpen = item.classList.contains('premium-accordion__item--open');
                 items.forEach(function (other) {
-                    other.classList.remove('premium-accordion__item--open');
-                    var btn = other.querySelector('.premium-accordion__trigger');
-                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                    setAccordionItemState(other, false);
                 });
-                if (!isOpen) {
-                    item.classList.add('premium-accordion__item--open');
-                    trigger.setAttribute('aria-expanded', 'true');
-                }
+                if (!isOpen) setAccordionItemState(item, true);
             });
         });
     }
@@ -87,15 +98,26 @@
     function initPremiumDrawer() {
         var toggle = document.getElementById('premium-nav-toggle');
         var drawer = document.getElementById('premium-drawer');
+        var panel = document.getElementById('premium-drawer-panel');
         var backdrop = document.getElementById('premium-drawer-backdrop');
         var closeBtn = document.getElementById('premium-drawer-close');
 
-        if (!toggle || !drawer) return;
+        if (!toggle || !drawer || !panel) return;
+
+        var lastFocus = null;
 
         function setOpen(open) {
             drawer.classList.toggle('premium-drawer--open', open);
             document.body.classList.toggle('premium-drawer-open', open);
+            drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) {
+                lastFocus = document.activeElement;
+                closeBtn && closeBtn.focus();
+            } else if (lastFocus && typeof lastFocus.focus === 'function') {
+                lastFocus.focus();
+                lastFocus = null;
+            }
         }
 
         toggle.addEventListener('click', function () {
@@ -103,27 +125,24 @@
         });
         if (backdrop) backdrop.addEventListener('click', function () { setOpen(false); });
         if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
-        drawer.querySelectorAll('a').forEach(function (a) {
+        drawer.querySelectorAll('.premium-drawer__links a').forEach(function (a) {
             a.addEventListener('click', function () { setOpen(false); });
         });
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') setOpen(false);
+            if (e.key === 'Escape' && drawer.classList.contains('premium-drawer--open')) {
+                setOpen(false);
+            }
         });
     }
 
     function setActivePremiumNav() {
         var page = document.body.getAttribute('data-page') || '';
-        var map = {
-            index: null,
-            slots: 'casino',
-            'live-casino': 'experience',
-            bonus: 'reserve',
-            'sports-betting': 'experience'
-        };
-        var key = map[page];
-        if (!key) return;
-        var link = document.querySelector('.premium-nav__link[data-premium-nav="' + key + '"]');
-        if (link) link.classList.add('premium-nav__link--active');
+        document.querySelectorAll('.premium-nav__link[data-nav="' + page + '"]').forEach(function (el) {
+            el.classList.add('premium-nav__link--active');
+        });
+        document.querySelectorAll('.premium-drawer__links a[data-nav="' + page + '"]').forEach(function (el) {
+            el.classList.add('premium-drawer__link--active');
+        });
     }
 
     window.PGAsiaPremium = {
@@ -139,14 +158,4 @@
         },
         affiliateUrl: AFFILIATE
     };
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            if (document.getElementById('premium-nav-links')) {
-                window.PGAsiaPremium.init();
-            }
-        });
-    } else if (document.getElementById('premium-nav-links')) {
-        window.PGAsiaPremium.init();
-    }
 })();
