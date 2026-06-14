@@ -1,76 +1,86 @@
-/* PG Asia Games - Design Tokens (black & gold) */
+/* PG Asia Games — Premium Futuristic Design Tokens */
 
 :root {
-    /* Brand - Black & gold */
-    --primary: #d4af37;
-    --primary-dark: #b8960c;
-    --primary-light: #f4d03f;
-    --secondary: #c9a227;
-    --secondary-dark: #9a7b0a;
+    /* Core palette */
+    --bg-base: #030307;
+    --bg-surface: #090912;
+    --bg-elevated: #0f0f1a;
+    --accent-indigo: #4F46E5;
+    --accent-indigo-light: #6366f1;
+    --accent-mint: #10B981;
+    --accent-mint-dim: rgba(16, 185, 129, 0.15);
 
-    /* Backgrounds */
-    --dark-bg: #0a0a0a;
-    --darker-bg: #000000;
-    --card-bg: #141414;
-    --card-bg-hover: #1c1c1c;
+    /* Legacy aliases (inner pages) */
+    --primary: #4F46E5;
+    --primary-dark: #4338ca;
+    --primary-light: #818cf8;
+    --secondary: #10B981;
+    --secondary-dark: #059669;
 
-    /* Text */
-    --text-primary: #ffffff;
-    --text-secondary: #e8e8e8;
-    --text-muted: #a0a0a0;
+    --dark-bg: #030307;
+    --darker-bg: #030307;
+    --card-bg: #090912;
+    --card-bg-hover: #0f0f1a;
 
-    /* Accents */
-    --accent-gold: #d4af37;
-    --accent-gold-dark: #b8960c;
-    --success: #22c55e;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+
+    --accent-gold: #4F46E5;
+    --accent-gold-dark: #4338ca;
+    --success: #10B981;
     --warning: #f97316;
     --error: #ef4444;
 
-    /* Borders */
-    --border-color: rgba(212, 175, 55, 0.25);
-    --border-color-light: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color-light: rgba(255, 255, 255, 0.06);
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
-    --gradient-gold: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.98) 100%);
+    --gradient-primary: linear-gradient(135deg, #4F46E5 0%, #6366f1 100%);
+    --gradient-gold: linear-gradient(135deg, #10B981 0%, #34d399 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, rgba(3, 3, 7, 0.98) 100%);
+    --gradient-shimmer: linear-gradient(105deg, #e4e4e7 0%, #a1a1aa 35%, #fafafa 50%, #a1a1aa 65%, #e4e4e7 100%);
 
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
-    --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.25);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.35);
+    --shadow-mint: 0 0 32px rgba(16, 185, 129, 0.25);
 
-    /* Layout */
-    --container-max-width: 1200px;
-    --container-padding-x: clamp(1.125rem, 4.5vw, 2.5rem);
+    --container-max-width: 1280px;
+    --container-padding-x: clamp(1.25rem, 4vw, 2.5rem);
 
-    /* Spacing */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
+    --space-3xl: 5rem;
 
-    /* Border Radius */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
-    --radius-xl: 20px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-pill: 9999px;
 
-    /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-heading: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', monospace;
+    --font-primary: var(--font-body);
+    --font-heading: var(--font-mono);
 
     --tracking-tight: -0.02em;
-    --tracking-display: -0.03em;
+    --tracking-display: 0.08em;
+    --tracking-micro: 0.18em;
 
-    /* Transitions */
-    --transition-fast: 0.15s ease;
-    --transition-normal: 0.3s ease;
+    --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-fast: 0.2s var(--ease-premium);
+    --transition-normal: 0.45s var(--ease-premium);
+    --transition-slow: 0.7s var(--ease-premium);
 
-    /* Buttons — matches brand.md section 4 */
+    --glass-bg: rgba(9, 9, 18, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: 16px;
+
     --btn-padding-y: 0.75rem;
     --btn-padding-x: 1.5rem;
     --btn-font-size: 0.875rem;
@@ -80,13 +90,17 @@
     --btn-padding-y-lg: 1rem;
     --btn-padding-x-lg: 2rem;
     --btn-font-size-lg: 1rem;
-    --btn-letter-spacing: 0.5px;
-    --btn-outline-width: 2px;
+    --btn-letter-spacing: 0.06em;
+    --btn-outline-width: 1px;
     --btn-focus-outline-offset: 3px;
+
+    --nav-height: 72px;
+    --affiliate-glow: 0 0 0 0 rgba(79, 70, 229, 0.5);
 }
 
 @media (max-width: 639px) {
     :root {
-        --container-padding-x: clamp(0.75rem, 3.25vw, 2.5rem);
+        --container-padding-x: clamp(1rem, 3.5vw, 2.5rem);
+        --nav-height: 64px;
     }
 }
