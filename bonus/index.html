@@ -41,10 +41,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
         "@context": "https://schema.org",
         "@graph": [
-            {"@type": "Organization", "@id": "https://pgasiagames.com/#organization", "name": "PG Asia Games", "alternateName": ["PGAsia", "PG Asia", "pgasia"], "url": "https://pgasiagames.com/", "description": "PG Asia Games / PGAsia—casino, live dealer tables, and sportsbook for Southeast Asia and select markets.", "logo": {"@type": "ImageObject", "url": "https://pgasiagames.com/assets/logo-main.webp", "contentUrl": "https://pgasiagames.com/assets/logo-main.webp"}, "sameAs": ["https://pgasiagames.com/"]},
+            {"@type": "Organization", "@id": "https://pgasiagames.com/#organization", "name": "PG Asia Games", "legalName": "PG Asia Games", "alternateName": ["PGAsia", "PG Asia", "pgasia"], "url": "https://pgasiagames.com/", "description": "PG Asia Games / PGAsia — licensed online casino and sportsbook at pgasiagames.com for Southeast Asia.", "logo": {"@type": "ImageObject", "url": "https://pgasiagames.com/assets/logo-main.webp", "contentUrl": "https://pgasiagames.com/assets/logo-main.webp"}, "sameAs": ["https://pgasiagames.com/", "https://pgasiagames.com/about-us/"]},
             {"@type": "WebSite", "@id": "https://pgasiagames.com/#website", "name": "PG Asia Games", "alternateName": ["PGAsia", "pgasia", "pgasiagames.com"], "url": "https://pgasiagames.com/", "description": "PG Asia Games (PGAsia)—official pgasiagames.com online casino and sportsbook for Asian players. Slots, live casino, sports betting.", "inLanguage": "en", "publisher": {"@id": "https://pgasiagames.com/#organization"}},
-            {"@type": "WebPage", "@id": "https://pgasiagames.com/bonus/#webpage", "url": "https://pgasiagames.com/bonus/", "name": "PGAsia Bonus | 100% Welcome & Cashback | pgasiagames.com", "description": "PG Asia Games (PGAsia) bonuses on pgasiagames.com—100% welcome match, daily cashback, VIP. Slots, live casino and sports eligible where stated.", "inLanguage": "en", "isPartOf": {"@id": "https://pgasiagames.com/#website"}, "publisher": {"@id": "https://pgasiagames.com/#organization"}, "about": {"@id": "https://pgasiagames.com/#organization"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://pgasiagames.com/images/webp/heroes/bonus-1200.webp"}, "breadcrumb": {"@id": "https://pgasiagames.com/bonus/#breadcrumb"}},
-            {"@type": "BreadcrumbList", "@id": "https://pgasiagames.com/bonus/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pgasiagames.com/"}, {"@type": "ListItem", "position": 2, "name": "Bonus", "item": "https://pgasiagames.com/bonus/"}]}
+            {"@type": "WebPage", "@id": "https://pgasiagames.com/bonus/#webpage", "url": "https://pgasiagames.com/bonus/", "name": "PGAsia Bonus | 100% Welcome Match + Daily Cashback & VIP", "description": "Claim PGAsia's 100% first-deposit match + up to 10% daily cashback. VIP tiers, free spins & acca boosts. Read terms in cashier before opting in.", "dateModified": "2026-09-01", "lastReviewed": "2026-09-01", "inLanguage": "en", "isPartOf": {"@id": "https://pgasiagames.com/#website"}, "publisher": {"@id": "https://pgasiagames.com/#organization"}, "about": {"@id": "https://pgasiagames.com/#organization"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://pgasiagames.com/images/webp/heroes/bonus-1200.webp"}, "breadcrumb": {"@id": "https://pgasiagames.com/bonus/#breadcrumb"}, "mainEntity": {"@id": "https://pgasiagames.com/bonus/#faqpage"}},
+            {"@type": "BreadcrumbList", "@id": "https://pgasiagames.com/bonus/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pgasiagames.com/"}, {"@type": "ListItem", "position": 2, "name": "Bonus", "item": "https://pgasiagames.com/bonus/"}]},
+            {"@type": "FAQPage", "@id": "https://pgasiagames.com/bonus/#faqpage", "dateModified": "2026-09-01", "mainEntity": [
+                {"@type": "Question", "name": "What is the wagering requirement on the PGAsia welcome bonus?", "acceptedAnswer": {"@type": "Answer", "text": "The current wagering requirement is displayed in the cashier and on the active offer when you deposit. It varies by campaign and region. Always verify before depositing — do not rely on third-party summaries. 18+ only. T&Cs apply."}},
+                {"@type": "Question", "name": "Does the PGAsia bonus apply to live casino games?", "acceptedAnswer": {"@type": "Answer", "text": "Live casino games may contribute at a lower percentage (10%-20%) or be excluded from specific offers. Always check the promotion terms in the cashier for eligible products and game weightings."}},
+                {"@type": "Question", "name": "How long do I have to use my PGAsia bonus?", "acceptedAnswer": {"@type": "Answer", "text": "Typically 7-30 days from credit date depending on the offer. The expiry date is shown alongside your active bonus in the cashier."}},
+                {"@type": "Question", "name": "Can I withdraw with an active bonus?", "acceptedAnswer": {"@type": "Answer", "text": "Your real-money cash balance can usually be withdrawn, but any bonus funds and bonus-derived winnings will be forfeited. Read the cashier warning before confirming any withdrawal during an active bonus period."}}
+            ]}
         ]
     }
     </script>
@@ -56,7 +62,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="partial-header"></div>
     <main id="main-content">
-        <div id="partial-1xbet-promo"></div>
         <section class="page-hero">
             <div class="page-hero__bg"><img src="/images/webp/heroes/bonus-1920.webp" srcset="/images/webp/heroes/bonus-1200.webp 1200w, /images/webp/heroes/bonus-1920.webp 1920w" sizes="100vw" alt="" loading="eager" width="1920" height="640"></div>
             <div class="container">
@@ -70,7 +75,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section class="section">
             <div class="container">
                 <article class="content-page">
-                    <p class="content-page__lead">Every <strong>PGAsia</strong> promotion is designed to be readable before you opt in. The headline offer is a <strong>100% first-deposit match</strong>—typically usable on <a href="/slots/">slots</a>, <a href="/live-casino/">live casino</a>, and <a href="/sports-betting/">sports</a> unless a campaign restricts specific games. Returning players benefit from <strong>daily cashback</strong>, weekly reloads, free spins, table campaigns, acca boosts, VIP tiers, and refer-a-friend rewards. Exact percentages, caps, wagering multipliers, and expiry dates always appear in the <strong>cashier</strong> at pgasiagames.com—read them before you play.</p>
+                    <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;padding:0.75rem 1rem;margin-bottom:1.25rem;font-size:0.82rem;color:var(--text-secondary);">
+                        <strong style="color:#10B981;">18+ only · Gambling involves risk · T&amp;Cs apply to all promotions</strong> — Wagering requirements must be met before bonus-derived winnings can be withdrawn. Always read full terms in the cashier before opting in. If gambling is causing harm, visit our <a href="/responsible-gambling/" style="color:#10B981;">Responsible Gambling</a> page or contact <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" style="color:#10B981;">BeGambleAware</a>.
+                    </div>
+
+                    <p class="content-page__lead">Every <strong>PGAsia</strong> promotion is designed to be readable before you opt in. The headline offer is a <strong>100% first-deposit match</strong> (wagering requirement applies — see current multiplier in cashier before depositing) — typically usable on <a href="/slots/">slots</a>, <a href="/live-casino/">live casino</a>, and <a href="/sports-betting/">sports</a> unless a campaign restricts specific games. Returning players benefit from <strong>daily cashback</strong> (up to 10%, cap applies), weekly reloads, free spins, table campaigns, acca boosts, VIP tiers, and refer-a-friend rewards. Exact percentages, caps, wagering multipliers, and expiry dates always appear in the <strong>cashier</strong> at pgasiagames.com—read them before you play. <strong>18+ only.</strong></p>
 
                     <div class="infographic-row" aria-label="Bonus snapshot">
                         <div class="infographic-box"><span class="infographic-box__value">100%</span><span class="infographic-box__label">Welcome</span></div>
@@ -320,7 +329,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
-        <div id="partial-1xbet-promo-bottom"></div>
     </main>
     <div id="partial-footer"></div>
 </body>
