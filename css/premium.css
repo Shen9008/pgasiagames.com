@@ -497,8 +497,15 @@ body:not(.premium-page) #main-content {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 0.5rem 0 1.5rem;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-indigo) transparent;
+}
+
+.premium-section .premium-container {
+    max-width: 100%;
+    overflow-x: clip;
 }
 
 .premium-showcase__scroll::-webkit-scrollbar {

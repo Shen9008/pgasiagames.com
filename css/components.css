@@ -1319,6 +1319,119 @@
     border-bottom-color: var(--primary);
 }
 
+/* Blog guides hub — internal links to articles */
+.blog-guides {
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl);
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+
+.blog-guides__title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 var(--space-sm);
+    color: var(--text-primary);
+}
+
+.blog-guides__intro {
+    margin: 0 0 var(--space-lg);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.blog-guides__groups {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .blog-guides__groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.blog-guides__heading {
+    margin: 0 0 var(--space-sm);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-light);
+}
+
+.blog-guides__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+}
+
+.blog-guides__list--inline {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .blog-guides__list--inline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.blog-guides__list a {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--primary-light);
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.blog-guides__list a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.blog-guides__more {
+    margin: var(--space-lg) 0 0;
+    font-size: 0.875rem;
+}
+
+.blog-guides__more a {
+    color: var(--accent-mint, var(--primary-light));
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blog-guides__more a:hover {
+    text-decoration: underline;
+}
+
+.content-byline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(79, 70, 229, 0.08);
+    border-left: 3px solid var(--accent-indigo, #4F46E5);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.content-page .info-table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Bonus block - dynamic content */
 .bonus-block {
     margin: var(--space-xl) 0;

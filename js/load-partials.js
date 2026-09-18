@@ -272,6 +272,22 @@
             }));
         }
 
+        var blogGuidesPlaceholder = document.getElementById('partial-blog-guides');
+        if (blogGuidesPlaceholder) {
+            var pageKey = document.body.getAttribute('data-page') || '';
+            var guidesFile = 'partials/blog-guides-hub.html';
+            if (pageKey === 'slots') {
+                guidesFile = 'partials/blog-guides-slots.html';
+            } else if (pageKey === 'live-casino') {
+                guidesFile = 'partials/blog-guides-live-casino.html';
+            } else if (pageKey === 'sports-betting') {
+                guidesFile = 'partials/blog-guides-sports.html';
+            }
+            promises.push(fetch(base + guidesFile).then(function (r) { return r.text(); }).then(function (html) {
+                blogGuidesPlaceholder.outerHTML = html;
+            }));
+        }
+
         var relatedLinksPlaceholder = document.getElementById('partial-related-links');
         if (relatedLinksPlaceholder) {
             promises.push(fetch(base + 'partials/related-links.html').then(function (r) { return r.text(); }).then(function (html) {
