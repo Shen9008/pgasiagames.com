@@ -17,6 +17,27 @@ body[data-page="blog"][data-blog-slug] #main-content .container {
     margin-bottom: var(--space-xl);
 }
 
+.blog-page-intro h2 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    margin-bottom: var(--space-md);
+}
+
+.blog-page-intro p {
+    margin-bottom: var(--space-md);
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+.blog-page-intro__byline {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.blog-listing__heading {
+    font-size: 1.25rem;
+    margin: var(--space-2xl) 0 var(--space-lg);
+}
+
 .blog-page-intro .page-hero__title {
     margin-bottom: var(--space-sm);
 }

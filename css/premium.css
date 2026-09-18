@@ -503,6 +503,23 @@ body:not(.premium-page) #main-content {
     scrollbar-color: var(--accent-indigo) transparent;
 }
 
+body.premium-page {
+    overflow-x: clip;
+}
+
+.premium-page main,
+.premium-vessel-card__visual img,
+.premium-hero img,
+.premium-showcase__scroll img {
+    max-width: 100%;
+    height: auto;
+}
+
+.premium-vessel-card__visual img {
+    width: 100%;
+    object-fit: cover;
+}
+
 .premium-section .premium-container {
     max-width: 100%;
     overflow-x: clip;
