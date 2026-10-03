@@ -15,6 +15,12 @@
   <url><loc>https://pgasiagames.com/blog/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <!-- Blog Posts -->
   <url>
+    <loc>https://pgasiagames.com/blog/why-casual-bettors-often-overreact-to-winning-streaks/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pgasiagames.com/blog/what-sports-bettors-can-learn-from-world-cup-and-nba-momentum-swings/</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
