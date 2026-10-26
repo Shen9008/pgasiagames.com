@@ -15,6 +15,12 @@
   <url><loc>https://pgasiagames.com/blog/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <!-- Blog Posts -->
   <url>
+    <loc>https://pgasiagames.com/blog/splitting-the-odds-navigating-world-cup-asian-handicaps-like-a-pro-at-pgasia/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pgasiagames.com/blog/chasing-the-max-peg-testing-high-risk-mobile-crypto-plinko-strategies-for/</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
