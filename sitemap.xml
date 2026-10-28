@@ -15,6 +15,12 @@
   <url><loc>https://pgasiagames.com/blog/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <!-- Blog Posts -->
   <url>
+    <loc>https://pgasiagames.com/blog/slaying-giants-in-north-america-world-cup-predictions/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pgasiagames.com/blog/the-60th-minute-shift-capitalizing-on-live-second-half-momentum-in-world-cup/</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
