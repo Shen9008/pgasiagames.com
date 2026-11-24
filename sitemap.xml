@@ -15,6 +15,12 @@
   <url><loc>https://pgasiagames.com/blog/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <!-- Blog Posts -->
   <url>
+    <loc>https://pgasiagames.com/blog/wild-bounty-showdown-review-a-deep-dive/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pgasiagames.com/blog/fortune-mouse-review-a-small-character-with-big-bonus-potential/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
